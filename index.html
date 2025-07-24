@@ -4,10 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
-    <link rel="stylesheet" href="/Weather/input.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Weather/images/hot_13882520.png">
+     <!-- Font Awesome (fixed link and version) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <!-- Custom CSS--> 
+    <link rel="stylesheet" href="output.css">
+   
 </head>
 <body>
+<header>
+    <h1 class="">Weather Dashboard</h1>
+</header>
+<section>
+    <label for="city">Enter City Name</label>
+    <input id="city" type="text" placeholder="e.g. Mumbai">
     
-<script href="/Weather/index.js"></script>    
+    <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <div>OR</div>
+    <div><button id="locationbtn">Use Current location</button></div>
+    <!-- Dropdown will be injected here later -->
+    <div>
+        <label for="searched">Recently Searched Cities</label>
+        <select id="searched" class="hidden">
+        <option value="">Select previous city</option>
+    </select>
+    </div>
+</section>
+<section id="error-box">
+    <p id="error-msg" class="hidden"></p>
+</section>
+<h2>Current Weather</h2>
+<section>
+    <!--Current day's weather report-->
+    
+    <div id="current">
+
+    </div>
+</section>
+<h2>Forecast</h2>
+<section>
+    <div id="day1">
+
+    </div>
+    <div id="day2">
+
+    </div>
+    <div id="day3">
+
+    </div>
+    <div id="day4">
+
+    </div>
+    <div id="day5">
+
+    </div>
+</section>
+<!-- JS File  -->
+<script src="/Weather/index.js" defer></script>    <!--defer ensures the script runs after the HTML is fully loaded-->
 </body>
 </html>
