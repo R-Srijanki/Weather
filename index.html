@@ -5,62 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="Weather/images/hot_13882520.png">
+    <link rel="icon" type="image/png" href="./images/hot_13882520.png">
      <!-- Font Awesome (fixed link and version) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <!-- Custom CSS--> 
     <link rel="stylesheet" href="output.css">
    
 </head>
-<body>
-<header>
-    <h1 class="">Weather Dashboard</h1>
-</header>
-<section>
-    <label for="city">Enter City Name</label>
-    <input id="city" type="text" placeholder="e.g. Mumbai">
+<body id="main" class="bg-[url('./images/field-with-clouds.jpg')] bg-cover min-h-screen text-black">
+<header class="bg-amber-400 flex justify-center items-center px-4 py-2">
+    <h1 class="text-[40px] font-semibold mx-auto">Weather Dashboard</h1>
     
-    <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
-    <div>OR</div>
-    <div><button id="locationbtn">Use Current location</button></div>
+    <label class="inline-block relative w-[50px] h-[28px] bg-gray-400 rounded-2xl"><div id="ball" class="absolute top-[2px] left-[2px] w-[24px] h-[24px] rounded-full bg-black transition-transform duration-300"></div><i class="fa-solid fa-sun absolute top-1 left-1 text-yellow-400 text-sm"></i><i class="fa-solid fa-moon absolute top-1 right-1 text-white text-sm"></i></i><input id="toggle" type="checkbox" class="sr-only"></label>
+</header>
+<section class="flex justify-center items-center mt-8">
+    <form class="bg-amber-200 w-[400px] flex flex-col justify-center rounded-2xl px-16"> 
+    <label for="city" class="p-2">Enter City Name</label>
+    <div class="text-center"><input id="city" type="text" placeholder="e.g. Mumbai">
+    
+    <button id="searchbtn" type="button"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+    <div class="text-center">OR</div>
+    <div class="text-center p-2">
+    <button id="locationbtn" type="button">Use Current location</button></div>
     <!-- Dropdown will be injected here later -->
     <div>
-        <label for="searched">Recently Searched Cities</label>
-        <select id="searched" class="hidden">
+        <label for="searched" class="p-2 mb-2">Recently Searched Cities</label>
+        <select id="searched" class="p-1 mb-2">
         <option value="">Select previous city</option>
-    </select>
+        </select>
     </div>
+    </form>
 </section>
-<section id="error-box">
-    <p id="error-msg" class="hidden"></p>
+<section id="error-box" class="hidden bg-red-300 text-xl font-bold text-red-700 px-4 py-2 rounded mx-auto w-fit max-w-full">
+    <p id="error-msg" class=""></p>
 </section>
-<h2>Current Weather</h2>
-<section>
+<h2 class="hidden text-center text-3xl mt-5 mb-5" id="currhead">Current Weather</h2>
+<section class="flex flex-wrap justify-evenly">
     <!--Current day's weather report-->
     
-    <div id="current">
+    <div id="current" class="bg-amber-200 flex flex-row rounded px-5 mb-5 mt-5 weathercard">
 
     </div>
 </section>
-<h2>Forecast</h2>
-<section>
-    <div id="day1">
+<h2 class="hidden text-center text-3xl mt-5 mb-5" id="forehead">Forecast</h2>
+<section class="flex flex-wrap justify-evenly">
+    <div id="day1" class="bg-amber-200 flex flex-row rounded px-5 mb-5 mt-5 weathercard">
 
     </div>
-    <div id="day2">
+    <div id="day2" class="bg-amber-200 flex flex-row rounded px-5 mb-5 mt-5 weathercard">
 
     </div>
-    <div id="day3">
+    <div id="day3" class="bg-amber-200 flex flex-row rounded px-5 mb-5 mt-5 weathercard">
 
     </div>
-    <div id="day4">
+    <div id="day4" class="bg-amber-200 flex flex-row rounded px-5 mb-5 mt-5 weathercard">
 
     </div>
-    <div id="day5">
+    <div id="day5" class="bg-amber-200 flex flex-row rounded px-5 mb-5 mt-5 weathercard">
 
     </div>
 </section>
 <!-- JS File  -->
-<script src="/Weather/index.js" defer></script>    <!--defer ensures the script runs after the HTML is fully loaded-->
+<script src="index.js" defer></script>    <!--defer ensures the script runs after the HTML is fully loaded-->
 </body>
 </html>
