@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
+    <title>Weather App</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./images/hot_13882520.png">
     <!-- Font Awesome (fixed link and version) -->
@@ -15,9 +15,9 @@
 </head>
 
 <body id="main" class="bg-[url('./images/pexels-pixabay-355887.jpg')] bg-cover min-h-screen">
-    <header class="flex justify-center items-center px-4 py-2">
+    <header class="flex justify-center items-center px-4 py-2"><!--Header for webpage with toggle and h1 tag-->
         <h1 class="sm:text-[39px] text-[30px] font-semibold mx-auto h1tag text-white">Weather Dashboard</h1>
-
+        <!--toggle between dark and light mode-->
         <label class="inline-block relative w-[50px] h-[28px] bg-gray-400 rounded-2xl">
             <div id="ball"
                 class="absolute top-[2px] left-[2px] w-[24px] h-[24px] rounded-full bg-black transition-transform duration-300">
@@ -26,7 +26,9 @@
                 type="checkbox" class="sr-only">
         </label>
     </header>
+    <!--Horizontal Line-->
     <hr class="my-4 border-gray-300">
+    <!--Form for search, get current location and dropdown-->
     <section class="flex justify-center items-center mt-10 ml-10 mr-10">
         <form class="bg-[#229799] w-[400px] flex flex-col justify-center rounded-2xl px-16" id="formid">
             <label for="city" class="p-2 text-lg text-white labels sm:text-xl">Enter City Name</label>
@@ -65,6 +67,7 @@
 
         </div>
     </section>
+    <!--Forecast upto 5 days -->
     <h2 class="hidden text-center text-3xl mt-5 mb-5 text-white" id="forehead">Forecast</h2>
     <section class="flex flex-wrap justify-center gap-5 text-white">
         <div id="day1"

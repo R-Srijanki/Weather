@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/*this is to create animation on weathercards*/
 .weathercard:hover {
     animation: moveupdown 1s ease-in-out;
 

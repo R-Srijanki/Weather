@@ -22,36 +22,36 @@ const h1tag = document.querySelector(".h1tag");
 const formlabel = document.querySelectorAll(".labels");
 //map for all weathers using icons
 const iconMap = {
-  "clear sky": "fas fa-sun",
-  "few clouds": "fas fa-cloud-sun",
-  "scattered clouds": "fas fa-cloud",
-  "broken clouds": "fas fa-cloud",
-  "overcast clouds": "fas fa-cloud",
-  "shower rain": "fas fa-cloud-showers-heavy",
-  "light rain": "fas fa-cloud-rain",
-  "moderate rain": "fas fa-cloud-rain",
-  "heavy intensity rain": "fas fa-cloud-showers-heavy",
-  "thunderstorm": "fas fa-bolt",
-  "snow": "fas fa-snowflake",
-  "light snow": "fas fa-snowflake",
-  "mist": "fas fa-smog",
-  "haze": "fas fa-smog",
-  "fog": "fas fa-smog",
-  "smoke": "fas fa-smog",
-  "drizzle": "fas fa-cloud-rain",
-  "light intensity drizzle": "fas fa-cloud-rain",
-  "heavy intensity drizzle": "fas fa-cloud-showers-heavy",
-  "rain": "fas fa-cloud-rain",
-  "thunderstorm with rain": "fas fa-bolt",
-  "thunderstorm with light rain": "fas fa-bolt",
-  "thunderstorm with heavy rain": "fas fa-bolt",
-  "freezing rain": "fas fa-snowflake",
-  "sleet": "fas fa-cloud-meatball", // closest match
-  "tornado": "fas fa-wind",
-  "sand": "fas fa-smog",
-  "dust": "fas fa-smog",
-  "squalls": "fas fa-wind",
-  "ash": "fas fa-smog"
+    "clear sky": "fas fa-sun",
+    "few clouds": "fas fa-cloud-sun",
+    "scattered clouds": "fas fa-cloud",
+    "broken clouds": "fas fa-cloud",
+    "overcast clouds": "fas fa-cloud",
+    "shower rain": "fas fa-cloud-showers-heavy",
+    "light rain": "fas fa-cloud-rain",
+    "moderate rain": "fas fa-cloud-rain",
+    "heavy intensity rain": "fas fa-cloud-showers-heavy",
+    "thunderstorm": "fas fa-bolt",
+    "snow": "fas fa-snowflake",
+    "light snow": "fas fa-snowflake",
+    "mist": "fas fa-smog",
+    "haze": "fas fa-smog",
+    "fog": "fas fa-smog",
+    "smoke": "fas fa-smog",
+    "drizzle": "fas fa-cloud-rain",
+    "light intensity drizzle": "fas fa-cloud-rain",
+    "heavy intensity drizzle": "fas fa-cloud-showers-heavy",
+    "rain": "fas fa-cloud-rain",
+    "thunderstorm with rain": "fas fa-bolt",
+    "thunderstorm with light rain": "fas fa-bolt",
+    "thunderstorm with heavy rain": "fas fa-bolt",
+    "freezing rain": "fas fa-snowflake",
+    "sleet": "fas fa-cloud-meatball", // closest match
+    "tornado": "fas fa-wind",
+    "sand": "fas fa-smog",
+    "dust": "fas fa-smog",
+    "squalls": "fas fa-wind",
+    "ash": "fas fa-smog"
 };
 
 let lat, lon;//latitude and longitude variable declare
@@ -241,7 +241,7 @@ async function currcard() {
         const temp = document.createElement("span");
         const humidity = document.createElement("span");
         const wind_speed = document.createElement("span");
-        
+
         const store = document.createElement("div");
         store.classList.add("flex", "flex-col", "gap-5"); //add tailwindCss directly on div
         // first converts to milliseconds and then Human-readable date 
@@ -253,24 +253,24 @@ async function currcard() {
         wind_speed.innerText = `Wind: ${currweatherdata.wind.speed} m/s`;
         // Icon fix: get from data
         const iconcode = currweatherdata.weather[0].icon;
-        const descri= currweatherdata.weather[0].description.toLowerCase();
-        const iconClass=iconMap[descri] || "fas fa-question";
+        const descri = currweatherdata.weather[0].description.toLowerCase();
+        const iconClass = iconMap[descri] || "fas fa-question";
         const icon = document.createElement("i");
         icon.className = `${iconClass} text-3xl mb-1 md:text-4xl`;
-        const type=document.createElement("div");
-        const des=document.createElement("p");
-        type.className=`self-center flex flex-col items-center`;
-        
-        des.innerText=`${descri}`;
+        const type = document.createElement("div");
+        const des = document.createElement("p");
+        type.className = `self-center flex flex-col items-center`;
+
+        des.innerText = `${descri}`;
         des.className = "text-sm capitalize text-black text-center";
-        type.append(icon,des);
+        type.append(icon, des);
         //clear previous content
         pre.innerHTML = "";
         //Append to container
 
         store.append(date, temp, humidity, wind_speed);
         currhead.classList.remove("hidden");
-        currhead.innerText=`${currweatherdata.name}'s Current Weather`;
+        currhead.innerText = `${currweatherdata.name}'s Current Weather`;
         pre.append(store, type);//append store div and icon img into pre div container
         pre.style.padding = "20px 20px"; //add padding for card 
 
@@ -296,7 +296,7 @@ async function cards() {
             const temp = document.createElement("span");
             const humidity = document.createElement("span");
             const wind_speed = document.createElement("span");
-            
+
             const store = document.createElement("div");
             store.classList.add("flex", "flex-col", "gap-5");//add tailwindCss directly on div
 
@@ -307,16 +307,16 @@ async function cards() {
             humidity.innerText = `Humidity: ${element.main.humidity}%`;
             wind_speed.innerText = `Wind: ${element.wind.speed} m/s`;
             // Icon fix: get from data
-            const descri=element.weather[0].description.toLowerCase();
-            const iconClass=iconMap[descri] || "fas fa-question";
-            const icon=document.createElement("i");
-            icon.className=`${iconClass} md:text-4xl self-center mb-1 text-3xl`;
-            const type=document.createElement("div");
-            const des=document.createElement("p");
-            des.innerText=`${descri}`;
-            des.className="text-sm capitalize text-black text-center";
-            type.append(icon,des);
-            type.className=`self-center flex flex-col items-center`;
+            const descri = element.weather[0].description.toLowerCase();
+            const iconClass = iconMap[descri] || "fas fa-question";
+            const icon = document.createElement("i");
+            icon.className = `${iconClass} md:text-4xl self-center mb-1 text-3xl`;
+            const type = document.createElement("div");
+            const des = document.createElement("p");
+            des.innerText = `${descri}`;
+            des.className = "text-sm capitalize text-black text-center";
+            type.append(icon, des);
+            type.className = `self-center flex flex-col items-center`;
             store.append(date, temp, humidity, wind_speed);
             forehead.classList.remove("hidden");
             //using switch add info for that card specified
