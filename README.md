@@ -33,3 +33,8 @@ A responsive web-based weather forecast app built with **HTML**, **JavaScript**,
 3. Set your own API Key
     * Create free account at https://openweathermap.org/api
     * Replace the api variable in index.js with your key
+
+## Project Screenshot
+
+![Weather App Github Commits](./images/Screenshot%202025-07-29%20235244.png)
+![Weather App UI](./images/Screenshot%202025-07-29%20235850.png)
